@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Alert,Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState,useRef } from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
 import {theme} from '../constants/theme'
@@ -16,8 +16,11 @@ const Login = () => {
   const passwordRef = useRef("");
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = ()=>{
-
+  const onSubmit = async ()=>{
+    if(!emailRef.current || !passwordRef.current){
+      Alert.alert('Connexion', "Veuillez renseigner tous les champs");
+      return;
+    }
   }
   return (
     <ScreenWrapper bgg="white">
@@ -26,13 +29,12 @@ const Login = () => {
             <BackButton router={router}/>
 
             <View >
-                <Text style={styles.welcomeText}>Bonjour !</Text>
-                <Text style={styles.welcomeText}>Welcome back !</Text>
+                <Text style={styles.welcomeText}>Bon retour !</Text>
             </View>
 
             <View style={styles.form}>
               <Text style={{fontSize: hp(1.5),  color: theme.colors.text}}>
-                Connectez-vous pour continuer
+                Veuillez vous connecter pour accéder à votre compte
               </Text>
                 <Input 
                 icon={<Icon name="mail" size={26} strokeWidth={1.6} />}
