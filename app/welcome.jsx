@@ -17,14 +17,14 @@ const welcome = () => {
         <Image source={require('../assets/images/welcome.png')} resizeMode="contain" style={styles.welcomeImage} />
 
         <View style={{gap: 20}}>
-          <Text style={styles.title}>TANGA</Text>
-          <Text style={styles.punchline}>Votre aplication pour acheter ou recharger vos cartes SIM</Text>
+          <Text style={styles.title}>APP NAME</Text>
+          <Text style={styles.punchline}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien.</Text>
         </View>
 
         <View style={styles.footer}>
-          <Button title="Get Started" onPress={() => router.push('signUp')} />
+          <Button title="Commencez maintenant !" onPress={() => router.push('signUp')} />
             <View style={styles.bottomTextContainer}>
-                <Text style={styles.loginText}>Already have an account ?</Text>
+                <Text style={styles.loginText}>Vous avez déjà un compte ?</Text>
                 <Pressable  onPress={() => router.push('login')}>
                     <Text style={[styles.loginText, {color: theme.colors.primaryDark, fontWeight: theme.fonts.bold}]}>Login</Text>
                 </Pressable>

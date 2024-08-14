@@ -1,10 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Home from './home'
+import Mail from './mail'
+import ArrowLeft from './arrowLeft'
+import Lock from './lock'
 import {theme} from '../../constants/theme'
 
 const icons = {
     home : Home,
+    mail : Mail,
+    lock : Lock,
+    arrowLeft : ArrowLeft
 }
 const Icon = ({name, ...props}) => {
   const IconComponent = icons[name]
@@ -21,4 +27,3 @@ const Icon = ({name, ...props}) => {
 
 export default Icon
 
-const styles = StyleSheet.create({})
